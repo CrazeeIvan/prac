@@ -1,31 +1,32 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'application'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
 
-mainClassName = 'hello.HelloWorld'
+jar {
+    baseName = 'jdbc-prac'
+    version =  '0.1.0'
+}
 
-// tag::repositories[]
 repositories {
     mavenCentral()
 }
-// end::repositories[]
 
-// tag::jar[]
-jar {
-    baseName = 'hello-gradle'
-    version =  '0.1.0'
-}
-// end::jar[]
-
-// tag::dependencies[]
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    compile "joda-time:joda-time:2.2"
-    testCompile "junit:junit:4.12"
+    compile("org.springframework.boot:spring-boot-starter")
+    compile("org.springframework:spring-jdbc")
+    compile("com.h2database:h2")
+    testCompile("junit:junit")
 }
-// end::dependencies[]
-
-// tag::wrapper[]
-// end::wrapper[]
