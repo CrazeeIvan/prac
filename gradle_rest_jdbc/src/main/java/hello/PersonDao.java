@@ -2,7 +2,7 @@ package com.hello.dao;
 
 import java.util.List;
 
-import com.technicalkeeda.bean.Person;
+import com.hello.bean.Person;
 
 public interface PersonDao {
 
