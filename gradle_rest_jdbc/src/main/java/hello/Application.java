@@ -20,17 +20,17 @@ public class Application implements CommandLineRunner {
     public static void main(String args[]) {
         SpringApplication.run(Application.class, args);
     }
-
-    @Autowired
-    JdbcTemplate jdbcTemplate;
+    //
+    // @Autowired
+    // JdbcTemplate jdbcTemplate;
 
     @Override
     public void run(String... strings) throws Exception {
 
         log.info("Creating tables");
 
-        jdbcTemplate.execute("DROP TABLE customers IF EXISTS");
-        jdbcTemplate.execute("CREATE TABLE customers(" +
+        JdbcAccess.jdbcTemplate.execute("DROP TABLE customers IF EXISTS");
+        JdbcAccess.jdbcTemplate.execute("CREATE TABLE customers(" +
                 "id SERIAL, first_name VARCHAR(255), last_name VARCHAR(255))");
 
         log.info("Table initialised");
@@ -42,10 +42,10 @@ public class Application implements CommandLineRunner {
         splitUpNames.forEach(name -> log.info(String.format("Inserting customer record for %s %s", name[0], name[1])));
 
         // Uses JdbcTemplate's batchUpdate operation to bulk load data
-        jdbcTemplate.batchUpdate("INSERT INTO customers(first_name, last_name) VALUES (?,?)", splitUpNames);
+        JdbcAccess.jdbcTemplate.batchUpdate("INSERT INTO customers(first_name, last_name) VALUES (?,?)", splitUpNames);
 
         log.info("Querying for customer records where first_name = 'Josh':");
-        jdbcTemplate.query(
+        JdbcAccess.jdbcTemplate.query(
                 "SELECT id, first_name, last_name FROM customers WHERE first_name = ?", new Object[] { "Josh" },
                 (rs, rowNum) -> new Customer(rs.getLong("id"), rs.getString("first_name"), rs.getString("last_name"))
         ).forEach(customer -> log.info(customer.toString()));
