@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
@@ -27,7 +29,7 @@ public class ExampleService {
 	// 	System.out.println("getCustomerList() called");
 	// 	return "{'response' : 'success'}";
 	// }
-	
+
 	    private static final String greetingTemplate = "Hello, %s!";
 	    private final AtomicLong greetingCounter = new AtomicLong();
 
