@@ -16,11 +16,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-@Autowired
-JdbcTemplate jdbcTemplate;
 
 @RestController
 public class myRestController {
+  
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
