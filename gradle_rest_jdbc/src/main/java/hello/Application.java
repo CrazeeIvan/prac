@@ -20,7 +20,7 @@ public class Application implements CommandLineRunner {
     public static void main(String args[]) {
         SpringApplication.run(Application.class, args);
     }
-    
+
     @Autowired
     JdbcTemplate jdbcTemplate;
 
@@ -28,7 +28,7 @@ public class Application implements CommandLineRunner {
     public void run(String... strings) throws Exception {
 
         log.info("Creating tables");
-        JdbcAccess(jdbcTemplate);
+        // JdbcAccess(jdbcTemplate);
     //     JdbcAccess.jdbcTemplate.execute("DROP TABLE customers IF EXISTS");
     //     JdbcAccess.jdbcTemplate.execute("CREATE TABLE customers(" +
     //             "id SERIAL, first_name VARCHAR(255), last_name VARCHAR(255))");
