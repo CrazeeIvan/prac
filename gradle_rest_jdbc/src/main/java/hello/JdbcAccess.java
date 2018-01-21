@@ -10,7 +10,7 @@ public class JdbcAccess {
 	private final JdbcTemplate jdbcTemplate;
 
 	@Autowired
-	public JdbcDetails(JdbcTemplate jdbcTemplate) {
+	public JdbcAccess(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 		System.out.println("jdbcTemplate=" + jdbcTemplate);
 		System.out.println(
