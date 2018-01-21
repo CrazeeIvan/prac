@@ -8,6 +8,8 @@ import org.springframework.context.support.AbstractApplicationContext;
 import com.hello.bean.Person;
 import com.hello.configuration.ApplicationConfig;
 import com.hello.services.PersonService;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class App {
