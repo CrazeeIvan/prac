@@ -16,7 +16,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 
 war {
-  baseName = 'rest-jdbc-prac'	
+  baseName = 'rest_jdbc_db'	
 	version = '0.0.1-SNAPSHOT'
 }
 
