@@ -9,9 +9,11 @@ import com.hello.bean.Person;
 import com.hello.configuration.ApplicationConfig;
 import com.hello.services.PersonService;
 
+@SpringBootApplication
 public class App {
 
-    public static void main(String args[]) {
+      public static void main(String args[]) {
+        SpringApplication.run(Application.class, args);
 
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
         PersonService personService = (PersonService) context.getBean("personService");
