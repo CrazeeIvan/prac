@@ -23,14 +23,13 @@ public class ApplicationConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(env.getRequiredProperty("jdbc.driverClassName"));
-        System.out.println("URL: " + env.getRequiredProperty("jdbc.driverClassName"));
+        System.out.println("Driver: " + env.getRequiredProperty("jdbc.driverClassName"));
         dataSource.setUrl(env.getRequiredProperty("jdbc.url"));
         System.out.println("URL: " + env.getRequiredProperty("jdbc.url"));
         dataSource.setUsername(env.getRequiredProperty("jdbc.username"));
-        System.out.println("URL: " + env.getRequiredProperty("jdbc.username"));
+        System.out.println("Username: " + env.getRequiredProperty("jdbc.username"));
         dataSource.setPassword(env.getRequiredProperty("jdbc.password"));
-        System.out.println("URL: " + env.getRequiredProperty("jdbc.password"));
-        return dataSource;
+        System.out.println("P
     }
 
     @Bean
