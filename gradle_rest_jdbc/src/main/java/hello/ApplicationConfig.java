@@ -29,7 +29,8 @@ public class ApplicationConfig {
         dataSource.setUsername(env.getRequiredProperty("jdbc.username"));
         System.out.println("Username: " + env.getRequiredProperty("jdbc.username"));
         dataSource.setPassword(env.getRequiredProperty("jdbc.password"));
-        System.out.println("P
+        System.out.println("Password: " + env.getRequiredProperty("jdbc.password"));
+        return dataSource;
     }
 
     @Bean
