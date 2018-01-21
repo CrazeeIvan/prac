@@ -23,15 +23,20 @@ public class ApplicationConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(env.getRequiredProperty("jdbc.driverClassName"));
+        System.out.println("URL: " + jdbc.driverClassName);
         dataSource.setUrl(env.getRequiredProperty("jdbc.url"));
+        System.out.println("URL: " + jdbc.url);
         dataSource.setUsername(env.getRequiredProperty("jdbc.username"));
+        System.out.println("URL: " + jdbc.username);
         dataSource.setPassword(env.getRequiredProperty("jdbc.password"));
+        System.out.println("URL: " + jdbc.password);
         return dataSource;
     }
 
     @Bean
     public JdbcTemplate jdbcTemplate(DataSource dataSource) {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+        System.out.println(jdbcTemplate);
         jdbcTemplate.setResultsMapCaseInsensitive(true);
         return jdbcTemplate;
     }
