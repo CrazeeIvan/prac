@@ -1,4 +1,4 @@
-package hello;
+package com.hello;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
