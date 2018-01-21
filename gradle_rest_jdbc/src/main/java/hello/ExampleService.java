@@ -27,12 +27,13 @@ public class ExampleService {
 	// 	System.out.println("getCustomerList() called");
 	// 	return "{'response' : 'success'}";
 	// }
-
+	
 	    private static final String greetingTemplate = "Hello, %s!";
 	    private final AtomicLong greetingCounter = new AtomicLong();
 
 	@RequestMapping("/greeting")
 	public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
+		log.info(String.format(greetingTemplate, name));
 			return new Greeting(greetingCounter.incrementAndGet(),
 													String.format(greetingTemplate, name));
 	}
