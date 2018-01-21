@@ -9,18 +9,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class ExampleService {
-	@RequestMapping(value = "/customers/list",
-	        consumes = "application/json",
-	        method = { RequestMethod.POST })
-	public @ResponseBody Object getCustomerList(
-	        ServletRequest req, ServletResponse res,
-	        @RequestBody String requestJson) throws Exception {
-		System.out.println("getCustomerList() called");
-		return "{'response' : 'success'}";
+
+
+	// @RequestMapping(value = "/customers/list",
+	//         consumes = "application/json",
+	//         method = { RequestMethod.POST })
+	// public @ResponseBody Object getCustomerList(
+	//         ServletRequest req, ServletResponse res,
+	//         @RequestBody String requestJson) throws Exception {
+	// 	System.out.println("getCustomerList() called");
+	// 	return "{'response' : 'success'}";
+	// }
+
+	    private static final String greetingTemplate = "Hello, %s!";
+	    private final AtomicLong greetingCounter = new AtomicLong();
+
+	@RequestMapping("/greeting")
+	public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
+			return new Greeting(greetingCounter.incrementAndGet(),
+													String.format(greetingTemplate, name));
 	}
+
 
 	// @RequestMapping(value = "/employee/{employeeId}",
 	//         consumes = "application/json",
