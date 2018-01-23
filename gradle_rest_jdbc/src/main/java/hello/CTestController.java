@@ -8,6 +8,7 @@ import com.hello.bean.Person;
 import com.hello.services.PersonService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
+import com.hello.configuration.ApplicationConfig;
 
 @RestController
 public class CTestController {

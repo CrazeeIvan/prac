@@ -58,20 +58,20 @@ public void run(String... strings) throws Exception {
         }
 
         System.out.println("Delete person Id = 3");
-        int deleteMe = 3;
-        personService.deletePerson(deleteMe);
-
-        yashwant.setFirstName("Yashwant - Updated");
-        yashwant.setLastName("Chavan - Updated");
-        yashwant.setAge(40);
-
-        System.out.println("Update person Id = 1");
-        int updateMe = 1;
-        personService.editPerson(yashwant, updateMe);
-
-        System.out.println("Find person Id = 2");
-        Person person = personService.find(2);
-        System.out.println(person);
+        // int deleteMe = 3;
+        // personService.deletePerson(deleteMe);
+        //
+        // yashwant.setFirstName("Yashwant - Updated");
+        // yashwant.setLastName("Chavan - Updated");
+        // yashwant.setAge(40);
+        //
+        // System.out.println("Update person Id = 1");
+        // int updateMe = 1;
+        // personService.editPerson(yashwant, updateMe);
+        //
+        // System.out.println("Find person Id = 2");
+        // Person person = personService.find(2);
+        // System.out.println(person);
 
         System.out.println("Find All Again");
         persons = personService.findAll();
