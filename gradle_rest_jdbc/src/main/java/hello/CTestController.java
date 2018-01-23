@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.hello.bean.Person;
 import com.hello.services.PersonService;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 
 @RestController
 public class CTestController {
@@ -16,6 +18,7 @@ public class CTestController {
     private final AtomicLong farewellCounter = new AtomicLong();
     AbstractApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
     PersonService personService = (PersonService) context.getBean("personService");
+
 
     @RequestMapping("/greeting")
     public CTest cTest(@RequestParam(value="name", defaultValue="World") String name) {
