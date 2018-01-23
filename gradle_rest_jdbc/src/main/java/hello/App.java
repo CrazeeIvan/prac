@@ -33,12 +33,13 @@ public class App implements CommandLineRunner {
       }
 @Autowired
 JdbcTemplate jdbcTemplate;
+private static final Logger log = LoggerFactory.getLogger(Application.class);
 
 @Override
 public void run(String... strings) throws Exception {
 
     log.info("Creating tables");
-    
+
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
         PersonService personService = (PersonService) context.getBean("personService");
 
