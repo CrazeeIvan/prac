@@ -64,9 +64,9 @@ public void run(String... strings) throws Exception {
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
         PersonService personService = (PersonService) context.getBean("personService");
 
-        Person yashwant = new Person(11, "Yashwant", "Chavan", 32);
-        Person mahesh = new Person(12, "Mahesh", "Patil", 25);
-        Person vishal = new Person(13, "Vishal", "Naik", 40);
+        Person yashwant = new Person(1, "Yashwant", "Chavan", 32);
+        Person mahesh = new Person(2, "Mahesh", "Patil", 25);
+        Person vishal = new Person(3, "Vishal", "Naik", 40);
 
         personService.addPerson(yashwant);
         personService.addPerson(mahesh);
