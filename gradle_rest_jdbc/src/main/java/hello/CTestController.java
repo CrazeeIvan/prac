@@ -22,7 +22,7 @@ public class CTestController {
     }
     @RequestMapping("/farewell")
     public Person person(@RequestParam(value="name", defaultValue="Ciaran") String name) {
-      Person tmp = new Person(farewellCounter.incrementAndGet(), name, "second_name", 35);
+      Person tmp = new Person((int)farewellCounter.incrementAndGet(), name, "second_name", 35);
       personService.addPerson(tmp);
       return tmp;
     }
