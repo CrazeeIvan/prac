@@ -33,7 +33,7 @@ public class App implements CommandLineRunner {
       }
 @Autowired
 JdbcTemplate jdbcTemplate;
-private static final Logger log = LoggerFactory.getLogger(Application.class);
+private static final Logger log = LoggerFactory.getLogger(App.class);
 
 @Override
 public void run(String... strings) throws Exception {
