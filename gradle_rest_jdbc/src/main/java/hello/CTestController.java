@@ -14,13 +14,13 @@ public class CTestController {
     private final AtomicLong farewellCounter = new AtomicLong();
 
     @RequestMapping("/greeting")
-    public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
-        return new Greeting(greetingCounter.incrementAndGet(),
+    public CTest cTest(@RequestParam(value="name", defaultValue="World") String name) {
+        return new CTest(greetingCounter.incrementAndGet(),
                             String.format(greetingTemplate, name));
     }
-    @RequestMapping("/farewell")
-    public Farewell Farewell(@RequestParam(value="name", defaultValue="World") String name) {
-        return new Farewell(farewellCounter.incrementAndGet(),
-                            String.format(farewellTemplate, name));
-    }
+    // @RequestMapping("/farewell")
+    // public Farewell Farewell(@RequestParam(value="name", defaultValue="World") String name) {
+    //     return new Farewell(farewellCounter.incrementAndGet(),
+    //                         String.format(farewellTemplate, name));
+    // }
 }
