@@ -14,6 +14,8 @@ public class CTestController {
     private final AtomicLong greetingCounter = new AtomicLong();
     private static final String farewellTemplate = "Farewell, %s!";
     private final AtomicLong farewellCounter = new AtomicLong();
+    AbstractApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+    PersonService personService = (PersonService) context.getBean("personService");
 
     @RequestMapping("/greeting")
     public CTest cTest(@RequestParam(value="name", defaultValue="World") String name) {
