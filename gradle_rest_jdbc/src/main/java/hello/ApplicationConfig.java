@@ -18,11 +18,11 @@ public class ApplicationConfig {
 
     @Autowired
     private Environment env;
-    int j;
+    int j = 0;
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        int i;
+        int i = 0;
         dataSource.setDriverClassName(env.getRequiredProperty("jdbc.driverClassName"));
         System.out.println("Driver: " + env.getRequiredProperty("jdbc.driverClassName"));
         dataSource.setUrl(env.getRequiredProperty("jdbc.url"));
