@@ -18,10 +18,11 @@ public class ApplicationConfig {
 
     @Autowired
     private Environment env;
-
+    int j;
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        int i;
         dataSource.setDriverClassName(env.getRequiredProperty("jdbc.driverClassName"));
         System.out.println("Driver: " + env.getRequiredProperty("jdbc.driverClassName"));
         dataSource.setUrl(env.getRequiredProperty("jdbc.url"));
@@ -30,6 +31,8 @@ public class ApplicationConfig {
         System.out.println("Username: " + env.getRequiredProperty("jdbc.username"));
         dataSource.setPassword(env.getRequiredProperty("jdbc.password"));
         System.out.println("Password: " + env.getRequiredProperty("jdbc.password"));
+        System.out.println("In-method Iteration: " + i++);
+        System.out.println("External Iteration: " + i++);
         return dataSource;
     }
 
